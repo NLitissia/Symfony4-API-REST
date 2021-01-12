@@ -18,10 +18,11 @@ class ApiController extends AbstractController
     {
        $regions = file_get_contents('https://geo.api.gouv.fr/regions');
        //dump($regions).die();
-       $regionTab = $serializer->decode($regions,'json');
+       //$regionTab = $serializer->decode($regions,'json');
        //dump($regionTab).die();
-       $regionObj = $serializer->denormalize($regionTab,'App\Entity\Region[]');
+       //$regionObj = $serializer->denormalize($regionTab,'App\Entity\Region[]');
        //dump($regionObj).die();
+       $regionObj = $serializer->deserialize($regions,'App\Entity\Region[]','json');
        return $this->render('api/index.html.twig',[
           'regions' => $regionObj
        ]);
