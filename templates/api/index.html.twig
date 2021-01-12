@@ -3,21 +3,12 @@
 {% block title %}Hello ApiController!{% endblock %}
 
 {% block body %}
-
+ <h2 class="title"> Liste des Régions de France </h2>
  <div class="container">
-   <div class="row">
-       <div class="col-md-3">
-      <div class="card border-primary mb-3" style="max-width: 20rem;">
-        <div class="card-header">Header</div>
-        <div class="card-body">
-          <h4 class="card-title">Primary card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-      </div>
-    <div>
-   </div>
+   {% for region in regions %}
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item">{{ region.nom }} {{region.code }}</li>
+     </ol>
+   {% endfor %}
  </div>
-
-
 {% endblock %}
