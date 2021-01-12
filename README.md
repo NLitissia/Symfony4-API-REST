@@ -3,8 +3,11 @@
 
 # 1) Description 
 1 - utilisation de API https://geo.api.gouv.fr/decoupage-administratif pour récuperer les région.
+
 2 - Déserialiser les données récuperer (Json) en utilisant la fonction deserialize du Component SerializerInterface.
+
 3 - Récuperer les départements de chaque région (code région) et les deserialiser (SerializerInterface) pour les afficher par la suite. 
+
 4 - Concernant le moteur d'affichage Twig : utilisation d'un théme de Bootswatch 
 
 # 2) Récuperer le projet 
