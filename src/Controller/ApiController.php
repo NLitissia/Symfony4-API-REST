@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Region;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,8 +20,10 @@ class ApiController extends AbstractController
        //dump($regions).die();
        $regionTab = $serializer->decode($regions,'json');
        //dump($regionTab).die();
+       $regionObj = $serializer->denormalize($regionTab,'App\Entity\Region[]');
+       //dump($regionObj).die();
        return $this->render('api/index.html.twig',[
-          'regions' => $regionTab
+          'regions' => $regionObj
        ]);
     }
 }
