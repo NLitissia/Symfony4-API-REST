@@ -6,9 +6,11 @@
  <h2 class="title"> Liste des Régions de France </h2>
  <div class="container">
    {% for region in regions %}
-    <ol class="breadcrumb">
-       <li class="breadcrumb-item">{{ region.nom }} {{region.code }}</li>
+    <a href="{{ path ('departementParRegion', {'id' : region.code, 'nom': region.nom})}}">
+     <ol class="breadcrumb nav-item dropdown ">
+       <li class="breadcrumb-item">{{ region.nom }} {{region.code }}</li> 
      </ol>
+    </a>  
    {% endfor %}
  </div>
 {% endblock %}

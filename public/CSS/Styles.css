@@ -3,4 +3,9 @@
     font-size: 50px;
     color: while;
     font-weight: 100;
+    padding-top: 20px;
+}
+
+a:link {
+    text-decoration: none;
 }

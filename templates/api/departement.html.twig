@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+ <h2 class="title"> Liste des Départements</h2>
+ <div class="container">
+   {% for departement in departements %}
+    <ol class="breadcrumb">
+       <li class="breadcrumb-item">{{ departement.nom }} {{departement.code }}</li>
+     </ol>
+   {% endfor %}
+ </div>
+{% endblock %}
